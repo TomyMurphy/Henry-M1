@@ -94,7 +94,7 @@ expect(tree.size()).toBe(3);
     expect(testArr).toEqual([ 0, 1, 5, 11, 12, 13, 14, 15, 17, 20, 21, 25, 28, 30, 31, 33, 34, 35, 45, 50 ]);
   });
 
-  // caso de uso: copiar el arbol (procesa primero la raiz)
+  // caso de uso: copiar el árbol (procesa primero la raíz)
   it('corre depth-first (en recorrido "pre-order") cuando depthFirstForEach() es ejecutado con la opcion "pre-order"', function() {
     valuesToInsert.forEach(function(value){
         tree.insert(value);
@@ -103,7 +103,7 @@ expect(tree.size()).toBe(3);
     expect(testArr).toEqual([20, 15, 5, 0, 1, 14, 13, 12, 11, 17, 25, 21, 28, 50, 45, 30, 35, 33, 31, 34]);
   });
 
-  // caso de uso: borrar un arbol, procesa primero las hojas
+  // caso de uso: borrar un árbol, procesa primero las hojas
   it('corre depth-first (en recorrido "post-order" cuando depthFirstForEach() es ejecutado con la opcion "post-order"', function() {
     valuesToInsert.forEach(function(value){
         tree.insert(value);
@@ -112,7 +112,7 @@ expect(tree.size()).toBe(3);
     expect(testArr).toEqual([ 1, 0, 11, 12, 13, 14, 5, 17, 15, 21, 31, 34, 33, 35, 30, 45, 50, 28, 25, 20 ]);
   });
 
-  // util cuando los niveles del arbol tienen significado (org chart? DOM elements?)
+  // útil cuando los niveles del árbol tienen significado (org chart? DOM elements?)
   it('corre breadth-first cuando breadthFirstForEach() es ejecutado', function() {
     valuesToInsert.forEach(function(value){
         tree.insert(value);
