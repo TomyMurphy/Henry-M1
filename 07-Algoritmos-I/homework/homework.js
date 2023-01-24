@@ -7,6 +7,19 @@ function factorear(num) {
   // Ej: factorear(180) --> [1, 2, 2, 3, 3, 5] Ya que 1x2x2x3x3x5 = 180 y son todos números primos
   // Tu código:
 
+  var array = [1];
+  var divisor = 2;
+
+  while (num > 1) {
+
+    if (num % divisor === 0) {
+      array.push(divisor);
+      num /= divisor;
+    }
+    else divisor++;
+  }
+
+  return array;
 }
 
 function bubbleSort(array) {
@@ -15,6 +28,21 @@ function bubbleSort(array) {
   // Devolver el array ordenado resultante
   // Tu código:
 
+  var swap = true;
+
+  while(swap) {
+    swap = false;
+    for (var i = 0; i < array.length - 1; i++) {
+      if (array[i] > array[i+1]) {
+        var aux = array[i];
+        array[i] = array[i+1];
+        array[i+1] = aux;
+        swap = true;
+      }
+    }
+  }
+
+  return array;
 }
 
 
@@ -24,6 +52,19 @@ function insertionSort(array) {
   // Devolver el array ordenado resultante
   // Tu código:
 
+  for (var i = 1; i < array.length; i++) {
+    var j = i - 1;
+    var aux = array[i];
+
+    while (j >= 0 && aux < array[j]) {
+      array[j+1] = array[j];  
+      j--;
+    }
+
+    array[j+1] = aux;
+  }
+
+  return array;
 }
 
 
@@ -33,6 +74,20 @@ function selectionSort(array) {
   // Devolver el array ordenado resultante
   // Tu código:
 
+  for (var i = 0; i < array.length; i++) {
+    var posMin = i;
+    for (var j = i + 1; j < array.length; j++) {
+      if (array[j] < array[posMin]) {
+        posMin = j;
+      }      
+    }
+    if (i !== posMin) {
+      var aux = array[i];
+      array[i] = array[posMin];
+      array[posMin] = aux;
+    }    
+  }  
+  return array;
 }
 
 

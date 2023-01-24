@@ -20,11 +20,6 @@ function DecimalABinario(num) {
 
    while (num > 0) {
 
-      if (num === 1) {
-         binary += 1;
-         break;
-      }
-
       binary += num % 2;
       num = Math.floor(num / 2);
    }
